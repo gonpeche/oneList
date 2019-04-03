@@ -14,7 +14,7 @@ export default class Content extends Component {
 const styles = {
     content: {
       flex: 10,
-      backgroundColor: '#00cec9'
+      backgroundColor: '#ffff'
     }
   }
   

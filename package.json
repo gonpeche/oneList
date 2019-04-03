@@ -10,8 +10,10 @@
     "expo": "^32.0.0",
     "firebase": "^5.9.2",
     "react": "16.5.0",
+    "react-devtools": "^3.6.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-action-button": "^2.8.5"
+    "react-native-action-button": "^2.8.5",
+    "react-native-modal": "^9.0.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"

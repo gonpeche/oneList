@@ -7,9 +7,9 @@ export default class Footer extends Component {
     buildButton () {
         return (
             <View>
-                <ActionButton 
-                    onPress={() => console.log('esa')}
-                    buttonColor="rgba(231,76,60,1)" />
+            <ActionButton
+                onPress={() => console.log('esa')}
+                buttonColor="rgba(231,76,60,1)" />
             </View>
         )
     }
@@ -24,6 +24,7 @@ export default class Footer extends Component {
 
 const styles = {
     footer: {
+        backgroundColor: '#ffff',
         flex: 2,
         justifyContent: 'flex-start',
         alignItems: 'center'
