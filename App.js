@@ -1,30 +1,25 @@
+// Vendors
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { YellowBox } from 'react-native';
-import { Button } from 'react-native';
-import Input from './components/Input'
+import { YellowBox, StyleSheet, Text, View } from 'react-native';
+YellowBox.ignoreWarnings(['Remote debugger']);
 
+// Components
+import Input from './components/Input'
+import Button from './components/Button'
 
 
 export default class App extends React.Component {
-  componentDidMount() {
-    // YellowBox.ignoreWarnings(['Remote debugger']);
-
-  }
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.headerStyle}>
-          <Text >oneList</Text>
+          <Text>oneList</Text>
         </View>
         <View style={styles.content}>
           <Text>Contenido</Text>
         </View>
-        <View style={styles.button}>
-          <Button
-            onPress={() => console.log('hola')}
-            title="Agregar Lista"
-          />
+        <View style={styles.footer}>
+          <Button />
         </View>
       </View>
     );
@@ -34,7 +29,7 @@ export default class App extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     alignItems: 'stretch',
     textAlign: 'center'
   },
@@ -50,10 +45,9 @@ const styles = {
     flex: 10,
     backgroundColor: 'white'
   },
-  button: {
-    flex: 1,
-    // justifyContent: 'flex-end',
-    backgroundColor: 'gray',
-    paddingBottom: 36
+  footer: {
+    flex: 2
   }
 }
+
+
