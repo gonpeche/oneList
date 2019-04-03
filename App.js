@@ -8,7 +8,7 @@ import Input from './components/Input'
 
 export default class App extends React.Component {
   componentDidMount() {
-    YellowBox.ignoreWarnings(['Remote debugger']);
+    // YellowBox.ignoreWarnings(['Remote debugger']);
 
   }
   render() {
@@ -35,13 +35,14 @@ const styles = {
   container: {
     flex: 1,
     backgroundColor: 'red',
-    alignItems: 'center'
+    alignItems: 'stretch',
+    textAlign: 'center'
   },
   headerStyle: {
     flex: 0.5,
     fontSize: 36,
     paddingTop: 40,
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: '100',
     backgroundColor: 'yellow'
   },
@@ -51,8 +52,7 @@ const styles = {
   },
   button: {
     flex: 1,
-    justifyContent: 'flex-end',
-    color: 'white',
+    // justifyContent: 'flex-end',
     backgroundColor: 'gray',
     paddingBottom: 36
   }
