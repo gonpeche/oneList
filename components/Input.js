@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View } from 'react-native';
 
-export default class PizzaTranslator extends Component {
+export default class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,9 +11,9 @@ export default class PizzaTranslator extends Component {
 
   render() {
     return (
-      <View style={{padding: 10}}>
+      <View style={{paddingLeft: 100, textAlign: 'center'}}>
         <TextInput
-          style={{height: 40}}
+          style={{height: 90, fontSize: 22}}
           placeholder="Type here to translate!"
           onChangeText={(text) => this.setState({text})}
         />
@@ -24,3 +24,4 @@ export default class PizzaTranslator extends Component {
     );
   }
 }
+
