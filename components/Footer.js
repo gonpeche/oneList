@@ -24,6 +24,10 @@ export default class Footer extends Component {
 
 const styles = {
     footer: {
+        shadowOpacity: 0.75,
+        shadowRadius: 5,
+        shadowColor: 'black',
+        shadowOffset: { height: 3, width: 0 },
         backgroundColor: '#ffff',
         flex: 2,
         justifyContent: 'flex-start',
