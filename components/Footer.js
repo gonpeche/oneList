@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import AddListModal from './AddListModal'
 
 export default class Footer extends Component {
+    constructor(props) {
+        super(props)
+        this.addList = this.addList.bind(this)
+    }
+    addList = () => {
+        console.log('hola')
+        this.refs.addModal.showAddModal()
+    }
     render() { 
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={this.handlPress}>
+                <TouchableOpacity onPress={() => this.addList()}>
                     <Text style={styles.button}> Add List </Text>
                 </TouchableOpacity>
-                {/* <Button
-                    onPress={() => console.log('esa')}
-                    title="Add List"
-                    color="#841584"
-                    border='1px solid red'
-                /> */}
+                <AddListModal
+                    ref={'addModal'}
+                    parentFlatList={this}
+                >
+
+                </AddListModal>
             </View>
         )
     }

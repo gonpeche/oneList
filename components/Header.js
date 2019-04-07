@@ -4,7 +4,7 @@ import { YellowBox, StyleSheet, Text, View } from 'react-native';
 export default class Header extends Component {
   render() {
     return (
-        <View style={styles.headerStyle}>
+        <View style={styles.container}>
             <Text style={styles.text}>oneList</Text>
         </View>
     )
@@ -12,8 +12,8 @@ export default class Header extends Component {
 }
 
 const styles = {
-    headerStyle: {
-        flex: 1,
+    container: {
+        flex: 1.5,
         justifyContent: 'flex-end',
         backgroundColor: 'pink',
         alignItems: 'center',

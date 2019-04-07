@@ -4,19 +4,19 @@ import { View, Text, ScrollView } from 'react-native';
 export default class Content extends Component {
     render() {
         return (
-            <ScrollView>
-                <View style={styles.content}>
-                    <Text>Contenido</Text>
-                </View>
-            </ScrollView>
+            <View style={styles.content}>
+                <ScrollView>
+                        <Text>Contenido</Text>
+                </ScrollView>
+            </View>
         )
     }
 }
 
 const styles = {
     content: {
-      flex: 1,
-      backgroundColor: '#ffff'
+      flex: 8,
+      backgroundColor: 'gray'
     }
   }
   
