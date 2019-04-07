@@ -1,36 +1,45 @@
 import React, { Component } from 'react'
-import { View } from 'react-native';
-import ActionButton from 'react-native-action-button';
-
+import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default class Footer extends Component {
-    buildButton () {
-        return (
-            <View>
-            <ActionButton
-                onPress={() => console.log('esa')}
-                buttonColor="rgba(231,76,60,1)" />
-            </View>
-        )
-    }
     render() { 
         return (
-            <View style={styles.footer}>
-                {this.buildButton()}
+            <View style={styles.container}>
+                <TouchableOpacity onPress={this.handlPress}>
+                    <Text style={styles.button}> Add List </Text>
+                </TouchableOpacity>
+                {/* <Button
+                    onPress={() => console.log('esa')}
+                    title="Add List"
+                    color="#841584"
+                    border='1px solid red'
+                /> */}
             </View>
         )
     }
 }
 
-const styles = {
-    footer: {
-        shadowOpacity: 0.75,
-        shadowRadius: 5,
-        shadowColor: 'black',
-        shadowOffset: { height: 3, width: 0 },
-        backgroundColor: '#ffff',
-        flex: 2,
-        justifyContent: 'flex-start',
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: 'green',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        alignContent: 'center',
         alignItems: 'center'
-    }
-  }
+    },
+    button: {
+        backgroundColor: 'blue',
+        borderColor: 'white',
+        borderWidth: 1,
+        borderRadius: 12,
+        color: 'white',
+        fontSize: 30,
+        width: 200,
+        fontWeight: 'bold',
+        overflow: 'hidden',
+        padding: 0,
+        textAlign:'center',
+    },
+})
+
