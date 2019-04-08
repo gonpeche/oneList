@@ -11,12 +11,21 @@ import AddListModal from './components/AddListModal'
 
 
 export default class App extends React.Component {
+  addList = () => {
+    this.refs.addModal.addList()
+  }
+
   render() {
     return (
       <View style={styles.container}>
+
           <Header />
-          <Content />
-          <Footer />
+            <Content ref={'addModal'}/>
+
+          <Footer 
+            addList={this.addList}
+          />
+
       </View>
     );
   }
@@ -26,4 +35,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  content: {
+    flex: 8
+  }
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { YellowBox, StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default class Header extends Component {
   render() {

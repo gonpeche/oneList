@@ -8,29 +8,29 @@ const screen = Dimensions.get('window')
 export class AddListModal extends Component {
     showAddModal = () => {
         this.refs.myModal.open()
-        console.log(screen)
+        console.log(this.refs)
     }
-  render() {
+    render() {
     return (
-      <Modal 
+        <Modal 
         style={{
             justifyContent: 'center',
             borderRadius: 30,
             shadowRadius: 10,
             width: screen.width - 100,
-            height: 280 
+            height: screen.height 
         }}
         ref={"myModal"}
         position='center'
         backdrop={true}
         onClosed={() => {
-            alert('modal cerrado')
+            // alert('modal cerrado')
         }}
-      >
+        >
         <Text>Agregar Lista</Text>
-      </Modal>
+        </Modal>
     )
-  }
+    }
 }
 
 export default AddListModal
