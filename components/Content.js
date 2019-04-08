@@ -5,14 +5,20 @@ import AddListModal from './AddListModal'
 
 
 export default class Content extends Component {
-    addList = () => {
+    openModal = () => {
         this.refs.addModal.showAddModal()
-      }
+    }
+    addList = () => {
+        console.log('lista Agregada')
+    }
     
     render() {
         return (
             <View  style={styles.container}>
-                <AddListModal ref={'addModal'} parentFlatList={this} />
+                <AddListModal 
+                    ref={'addModal'} 
+                    parentFlatList={this} 
+                    addList={this.addList}/>
                 <ScrollView>
                             <Text>Contenido</Text>
                             <Text>Contenido</Text>

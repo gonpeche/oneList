@@ -8,7 +8,6 @@ const screen = Dimensions.get('window')
 export class AddListModal extends Component {
     showAddModal = () => {
         this.refs.myModal.open()
-        console.log(this.refs)
     }
     render() {
     return (
@@ -18,7 +17,7 @@ export class AddListModal extends Component {
             borderRadius: 30,
             shadowRadius: 10,
             width: screen.width - 100,
-            height: screen.height 
+            height: 250
         }}
         ref={"myModal"}
         position='center'
@@ -28,6 +27,9 @@ export class AddListModal extends Component {
         }}
         >
         <Text>Agregar Lista</Text>
+        <Button
+            onPress={() => this.props.addList()}
+        >Hola</Button>
         </Modal>
     )
     }
