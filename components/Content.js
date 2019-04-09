@@ -20,20 +20,10 @@ export default class Content extends Component {
                     parentFlatList={this} 
                     addList={this.addList}/>
                 <ScrollView>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
-                            <Text>Contenido</Text>
+                    {/* <FlatList
+                        data={[{key: 'a'}, {key: 'b'}]}
+                        renderItem={({item}) => <Text>{item.key}</Text>}
+                    /> */}
                 </ScrollView>                
             </View>
         )

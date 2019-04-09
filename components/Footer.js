@@ -5,7 +5,7 @@ export default class Footer extends Component {
     render() { 
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => this.props.addList()}>
+                <TouchableOpacity onPress={() => this.props.openModal()}>
                     <Text style={styles.button}> Add List </Text>
                 </TouchableOpacity>
             </View>

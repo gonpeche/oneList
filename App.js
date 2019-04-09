@@ -7,11 +7,10 @@ YellowBox.ignoreWarnings(['Remote debugger']);
 import Content from './components/Content'
 import Footer from './components/Footer'
 import Header from './components/Header'
-// import AddListModal from './components/AddListModal'
 
 
 export default class App extends React.Component {
-  addList = () => {
+  openModal = () => {
     this.refs.addModal.openModal()
   }
 
@@ -23,7 +22,7 @@ export default class App extends React.Component {
             <Content ref={'addModal'}/>
 
           <Footer 
-            addList={this.addList}
+            openModal={this.openModal}
           />
 
       </View>
