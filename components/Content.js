@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView, StyleSheet } from 'react-native';
+import { Text, View, ScrollView, StyleSheet, FlatList } from 'react-native';
 import AddListModal from './AddListModal'
 
 
-
 export default class Content extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            lists: [{ name: "Supermercado"}, { name: "Gimnasio"}]
+        }
+    }
     openModal = () => {
         this.refs.addModal.showAddModal()
     }
@@ -20,10 +25,10 @@ export default class Content extends Component {
                     parentFlatList={this} 
                     addList={this.addList}/>
                 <ScrollView>
-                    {/* <FlatList
+                    <FlatList
                         data={[{key: 'a'}, {key: 'b'}]}
                         renderItem={({item}) => <Text>{item.key}</Text>}
-                    /> */}
+                    />
                 </ScrollView>                
             </View>
         )
