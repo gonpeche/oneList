@@ -99,7 +99,8 @@ class FlatListDemo extends Component {
 
   render() {
     return (
-      <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
+      // <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
+      <View>
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
@@ -120,7 +121,9 @@ class FlatListDemo extends Component {
           onEndReached={this.handleLoadMore}
           onEndReachedThreshold={50}
         />
-      </List>
+
+      </View>
+      // </List>
     );
   }
 }

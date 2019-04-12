@@ -1,23 +1,30 @@
 import React, { Component } from 'react'
 import { Text, View, ScrollView, StyleSheet, FlatList } from 'react-native';
 import AddListModal from './AddListModal'
-
+import FlatListDemo from './FlatListDemo'
 
 export default class Content extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            lists: [{ name: "Supermercado"}, { name: "Gimnasio"}]
+            lists: [{name: 'a'}, {name: 'b'}],
+            lista: []
         }
     }
     openModal = () => {
         this.refs.addModal.showAddModal()
     }
-    addList = () => {
-        console.log('lista Agregada')
+    addList = (listaName) => {
+        const lista = {
+            name: listaName
+        }
+        this.setState({ lista: [...this.state.lista, lista] })
     }
     
+    
     render() {
+        const listEmpty = this.state.lista ? this.state.lista[0] : null
+        console.log(this.state.lista)
         return (
             <View  style={styles.container}>
                 <AddListModal 
@@ -26,8 +33,9 @@ export default class Content extends Component {
                     addList={this.addList}/>
                 <ScrollView>
                     <FlatList
-                        data={[{key: 'a'}, {key: 'b'}]}
-                        renderItem={({item}) => <Text>{item.key}</Text>}
+                        data={this.state.lista}
+                        renderItem={({item}) => <Text>{item.name}</Text>}
+                        keyExtractor={(item, index) => index.toString()}
                     />
                 </ScrollView>                
             </View>
