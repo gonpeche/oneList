@@ -13,18 +13,13 @@ export default class App extends React.Component {
   openModal = () => {
     this.refs.addModal.openModal()
   }
-
+  
   render() {
     return (
       <View style={styles.container}>
-
           <Header />
-            <Content ref={'addModal'}/>
-
-          <Footer 
-            openModal={this.openModal}
-          />
-
+          <Content ref={'addModal'}/>
+          <Footer openModal={this.openModal} />
       </View>
     );
   }

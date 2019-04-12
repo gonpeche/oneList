@@ -1,5 +1,8 @@
+// Tools
 import React, { Component } from 'react'
 import { Text, View, ScrollView, StyleSheet, FlatList,  } from 'react-native';
+
+// Components
 import AddListModal from './AddListModal'
 import TotalLists from './TotalLists'
 
