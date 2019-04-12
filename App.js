@@ -4,7 +4,7 @@ import { YellowBox, StyleSheet, View } from 'react-native';
 YellowBox.ignoreWarnings(['Remote debugger']);
 
 // Components
-import Content from './components/Content'
+import Content from './components/Content/Content'
 import Footer from './components/Footer'
 import Header from './components/Header'
 

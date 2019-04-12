@@ -23,7 +23,7 @@ export class AddListModal extends Component {
                 borderRadius: 30,
                 shadowRadius: 10,
                 width: screen.width - 100,
-                height: 250
+                height: 200
             }}
             ref={"myModal"}
             position='center'
