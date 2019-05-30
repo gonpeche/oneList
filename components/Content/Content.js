@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet, FlatList,  } from 'react-native';
 import firebase from '../../Firebase';
-const database = firebase.database();
 
 // @components
 import AddListModal from './AddListModal'
@@ -17,8 +16,14 @@ export default class Content extends Component {
         }
     }
     componentDidMount() {
-        console.log(database)
-    }
+        function writeUserData() {
+            firebase.database().ref('tasks/e8P61tsS8wrk1eXulhnm').set({
+              task: 'name'
+            });
+        }
+        writeUserData()
+    };
+    
     openModal = () => { this.refs.addModal.showAddModal() }
     addList = (listaName) => {
         const lista = {
