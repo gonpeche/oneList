@@ -1,10 +1,13 @@
-// Tools
-import React, { Component } from 'react'
+// @core
+import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet, FlatList,  } from 'react-native';
+import firebase from '../../Firebase';
+const database = firebase.database();
 
-// Components
+// @components
 import AddListModal from './AddListModal'
 import TotalLists from './TotalLists'
+
 
 export default class Content extends Component {
     constructor(props) {
@@ -12,6 +15,9 @@ export default class Content extends Component {
         this.state = {
             lista: [{name: 'Juntada finde'}, {name: 'Supermercado'}]
         }
+    }
+    componentDidMount() {
+        console.log(database)
     }
     openModal = () => { this.refs.addModal.showAddModal() }
     addList = (listaName) => {
