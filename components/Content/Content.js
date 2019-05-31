@@ -15,22 +15,26 @@ export default class Content extends Component {
             lista: [{name: 'Juntada finde'}, {name: 'Supermercado'}]
         }
     }
-    componentDidMount() {
-        function writeUserData() {
-            firebase.database().ref('tasks/e8P61tsS8wrk1eXulhnm').set({
-              task: 'name'
-            });
-        }
-        writeUserData()
-    };
     
     openModal = () => { this.refs.addModal.showAddModal() }
+
     addList = (listaName) => {
-        const lista = {
-            name: listaName
-        }
-        this.setState({ lista: [...this.state.lista, lista] })
+        firebase.database().ref('tasks').once('value').then(value => console.log(value.val()))
+
+        var newPostKey = firebase.database().ref().child('posts').push().key;
+        var updates = {};
+        updates['/tasks/' + newPostKey] = listaName;
+      
+        return firebase.database().ref().update(updates);
+        // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+        // ...
+    // });
+
+        // firebase.database().ref('tasks').set({
+        //     task: listaName
+        // })
     }
+
     renderLista = ({item}) => (
         <TotalLists
           id={item.id}
