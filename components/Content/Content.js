@@ -12,34 +12,35 @@ export default class Content extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            lista: [{name: 'Juntada finde'}, {name: 'Supermercado'}]
+            lista: []
         }
+    }
+
+    componentDidMount() {
+        let lista;
+        firebase.database().ref('/tasks').once('value').then(function(snapshot) {
+            lista = Object.values(snapshot.val())
+        }).then(() => {
+            this.setState({ lista })
+        })
+
     }
     
     openModal = () => { this.refs.addModal.showAddModal() }
 
     addList = (listaName) => {
-        firebase.database().ref('tasks').once('value').then(value => console.log(value.val()))
-
         var newPostKey = firebase.database().ref().child('posts').push().key;
         var updates = {};
         updates['/tasks/' + newPostKey] = listaName;
-      
+        
         return firebase.database().ref().update(updates);
-        // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-        // ...
-    // });
-
-        // firebase.database().ref('tasks').set({
-        //     task: listaName
-        // })
     }
 
     renderLista = ({item}) => (
         <TotalLists
           id={item.id}
           onPressItem={() => console.log('onPressItem')}
-          title={item.name}
+          title={item}
         />
       );
     
