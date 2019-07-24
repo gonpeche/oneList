@@ -70,7 +70,9 @@ export class AddListModal extends Component {
             }}
             onPress={() => {
                 console.log('hola')
-                this.props.addList(this.state.newList)}
+                this.props.addList(this.state.newList)
+                this.refs.myModal.close();
+                }
             }
         >Accept</Button>
         </Modal>
