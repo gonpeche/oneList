@@ -69,9 +69,9 @@ export class AddListModal extends Component {
                 color: 'white'
             }}
             onPress={() => {
-                console.log('hola')
-                this.props.addList(this.state.newList)
-                this.refs.myModal.close();
+                    this.props.addList(this.state.newList)
+                    this.refs.myModal.close();
+                    this.setState({ newList: '' })
                 }
             }
         >Accept</Button>
