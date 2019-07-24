@@ -6,7 +6,7 @@ export default class Footer extends Component {
         return (
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => this.props.openModal()}>
-                    <Text style={styles.button}> Add List </Text>
+                    <Text style={styles.button}>Add</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -20,7 +20,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
         alignContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom: 10,
+        paddingTop: 10,
     },
     button: {
         backgroundColor: 'blue',
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         color: 'white',
         fontSize: 30,
-        width: 200,
+        width: 100,
         fontWeight: 'bold',
         overflow: 'hidden',
         padding: 0,

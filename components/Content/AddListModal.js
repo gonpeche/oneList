@@ -68,7 +68,10 @@ export class AddListModal extends Component {
                 fontSize: 18,
                 color: 'white'
             }}
-            onPress={() => this.props.addList(this.state.newList)}
+            onPress={() => {
+                console.log('hola')
+                this.props.addList(this.state.newList)}
+            }
         >Accept</Button>
         </Modal>
     )
