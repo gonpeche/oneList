@@ -7,7 +7,6 @@ import firebase from '../../Firebase';
 import AddListModal from './AddListModal'
 import TotalLists from './TotalLists'
 
-
 export default class Content extends Component {
     constructor(props) {
         super(props)
@@ -16,37 +15,30 @@ export default class Content extends Component {
         }
     }
 
-    componentDidMount() {
+    updateTasks() {
         let lista;
 
-        firebase.database().ref('/tasks').once('value').then(function(snapshot) {
-            lista = Object.values(snapshot.val())
-        }).then(() => {
-            this.setState({ lista })
-        })
+        firebase.database().ref('/tasks').once('value')
+        .then(snapshot => { lista = Object.values(snapshot.val())})
+        .then(() => { this.setState({ lista }) })
+        .catch(err => console.err(`Error fetching tasks on firebase: ${err}`))
+    }
 
+    componentDidMount() {
+        this.updateTasks()
+        // Remove database
+        // firebase.database().ref(`/tasks/`).remove()
     }
     
     openModal = () => { this.refs.addModal.showAddModal() }
 
     addList = (listaName) => {
-        // REMOVE DATABASE:
-        // firebase.database().ref(`/tasks/`).remove()
-
         var newPostKey = firebase.database().ref().child('posts').push().key;
         var updates = {};
         updates['/tasks/' + newPostKey] = listaName;
         firebase.database().ref().update(updates);
 
-        console.log('nueva promise')
-
-        firebase.database().ref('/tasks').once('value').then(function(snapshot) {
-            lista = Object.values(snapshot.val())
-        }).then(() => {
-            this.setState({ lista })
-        })
-
-
+        this.updateTasks()
     }
 
     renderLista = ({item}) => (
@@ -58,7 +50,6 @@ export default class Content extends Component {
       );
     
     render() {
-        console.log('rendereado', this.state.lista)
       return (
             <View  style={styles.container}>
                 <AddListModal 
