@@ -30,16 +30,23 @@ export default class Content extends Component {
     openModal = () => { this.refs.addModal.showAddModal() }
 
     addList = (listaName) => {
+        // REMOVE DATABASE:
+        // firebase.database().ref(`/tasks/`).remove()
 
         var newPostKey = firebase.database().ref().child('posts').push().key;
         var updates = {};
         updates['/tasks/' + newPostKey] = listaName;
-        setTimeout(() => this.forceUpdate(), 1000)
-        
-        // this.setState({
-        //     lista: this.state.lista
-        // })
-        return firebase.database().ref().update(updates);
+        firebase.database().ref().update(updates);
+
+        console.log('nueva promise')
+
+        firebase.database().ref('/tasks').once('value').then(function(snapshot) {
+            lista = Object.values(snapshot.val())
+        }).then(() => {
+            this.setState({ lista })
+        })
+
+
     }
 
     renderLista = ({item}) => (
