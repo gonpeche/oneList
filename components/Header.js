@@ -17,6 +17,7 @@ const styles = {
         justifyContent: 'flex-end',
         backgroundColor: 'pink',
         alignItems: 'center',
+        marginBottom: 4
       },
     text: {
         fontSize: 40,

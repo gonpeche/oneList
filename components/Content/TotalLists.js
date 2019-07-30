@@ -9,8 +9,10 @@ export default class TotalLists extends PureComponent {
     render() {
       return (
         <TouchableOpacity onPress={this._onPress} style={styles.touch}>
+          
           <View style={styles.container}>
             <Text style={styles.text}>{this.props.title}</Text>
+
           </View>
         </TouchableOpacity>
       );
@@ -29,16 +31,22 @@ export default class TotalLists extends PureComponent {
     },
     text: {
       color: '#fff',
-      fontSize: 21
+      // display: flex,
+      fontSize: 21,
+      // flexDirection: 'row'
     },
     touch: {
-      height: 50,
+      height: 35,
       backgroundColor: '#48BBEC',
       borderColor: '#48BBEC',
       alignSelf: 'stretch',
       justifyContent: 'center',
       alignItems: 'center',
-      borderRadius: 5,
-      margin: 8
+      marginLeft: 4,
+      marginRight: 4,
+      marginBottom: 5
+      // margin: 4,
+      // borderRadius: 5,
+      // margin: 8
     }
   });
