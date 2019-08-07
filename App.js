@@ -8,7 +8,6 @@ import Content from './components/Content/Content'
 import Footer from './components/Footer'
 import Header from './components/Header'
 
-
 export default class App extends React.Component {
   openModal = () => {
     this.refs.addModal.openModal()
